@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:weightSum="1000.0" >
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="999.0"
+            android:clickable="true" />
+
+        <com.baidu.lbsapi.panoramaview.PanoramaView
+            android:id="@+id/panorama"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0"
+            android:background="#00000000"
+            android:clickable="true" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/customicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dip"
+        android:text="线路规划" />
+ 
+
+    <Button
+        android:id="@+id/muni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/customicon"
+        android:layout_marginTop="10dip"
+        android:text="模拟" />
+
+    <RadioGroup
+        android:id="@+id/RadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/muni"
+        android:layout_marginTop="10dip"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="setMapMode"
+            android:text="普通图" />
+
+        <RadioButton
+            android:id="@+id/statellite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="setMapMode"
+            android:text="卫星图" />
+
+        <RadioButton
+            android:id="@+id/statepanorama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="setMapMode"
+            android:text="全景图" />
+    </RadioGroup>
+
+</RelativeLayout>
